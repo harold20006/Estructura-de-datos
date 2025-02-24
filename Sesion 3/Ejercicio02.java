@@ -1,8 +1,8 @@
-import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
-public class Ejercicio01 {
+public class Ejercicio02 {
 
     public static void encabezadopgm() {
         // Datos del encabezado
@@ -26,12 +26,17 @@ public class Ejercicio01 {
         System.out.println();
     }
 
-    public static int obtenerPrimerElemento(int[] arr) {
-        return arr[0];
+    public static int sumaElementos(int[] arr) {
+        int suma = 0;
+        for (int num : arr) {
+            suma += num;
+        }
+        return suma;
     }
 
     public static void main(String[] args) {
         encabezadopgm();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese el tamaño del array: ");
@@ -43,9 +48,8 @@ public class Ejercicio01 {
             arr[i] = scanner.nextInt();
         }
 
-        System.out.println("El primer elemento del array es: " + obtenerPrimerElemento(arr));
+        System.out.println("La suma de los elementos es: " + sumaElementos(arr));
 
         scanner.close();
     }
-
 }

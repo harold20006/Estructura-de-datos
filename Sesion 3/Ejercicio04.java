@@ -1,9 +1,8 @@
-import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
-public class Ejercicio01 {
-
+public class Ejercicio04 {
     public static void encabezadopgm() {
         // Datos del encabezado
         String nombre = "Harold Roldan Vargas";
@@ -26,8 +25,17 @@ public class Ejercicio01 {
         System.out.println();
     }
 
-    public static int obtenerPrimerElemento(int[] arr) {
-        return arr[0];
+    public static void burbuja(int[] arr) {
+        int n = arr.length;
+        for (int i = 0; i < n - 1; i++) {
+            for (int j = 0; j < n - i - 1; j++) {
+                if (arr[j] > arr[j + 1]) {
+                    int temp = arr[j];
+                    arr[j] = arr[j + 1];
+                    arr[j + 1] = temp;
+                }
+            }
+        }
     }
 
     public static void main(String[] args) {
@@ -43,9 +51,13 @@ public class Ejercicio01 {
             arr[i] = scanner.nextInt();
         }
 
-        System.out.println("El primer elemento del array es: " + obtenerPrimerElemento(arr));
+        burbuja(arr);
+
+        System.out.println("Array ordenado:");
+        for (int num : arr) {
+            System.out.print(num + " ");
+        }
 
         scanner.close();
     }
-
 }
