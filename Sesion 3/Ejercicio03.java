@@ -2,8 +2,7 @@ import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Ejercicio01 {
-
+public class Ejercicio03 {
     public static void encabezadopgm() {
         // Datos del encabezado
         String nombre = "Harold Roldan Vargas";
@@ -26,26 +25,45 @@ public class Ejercicio01 {
         System.out.println();
     }
 
-    public static int obtenerPrimerElemento(int[] arr) {
-        return arr[0];
+    public static int busquedaBinaria(int[] arr, int target) {
+        int izquierda = 0, derecha = arr.length - 1;
+        while (izquierda <= derecha) {
+            int medio = izquierda + (derecha - izquierda) / 2;
+            if (arr[medio] == target)
+                return medio;
+            if (arr[medio] < target)
+                izquierda = medio + 1;
+            else
+                derecha = medio - 1;
+        }
+        return -1;
+
     }
 
     public static void main(String[] args) {
         encabezadopgm();
+
         Scanner scanner = new Scanner(System.in);
 
         System.out.print("Ingrese el tamaño del array: ");
         int n = scanner.nextInt();
         int[] arr = new int[n];
 
-        System.out.println("Ingrese los elementos del array:");
+        System.out.println("Ingrese los elementos del array en orden ascendente:");
         for (int i = 0; i < n; i++) {
             arr[i] = scanner.nextInt();
         }
 
-        System.out.println("El primer elemento del array es: " + obtenerPrimerElemento(arr));
+        System.out.print("Ingrese el número a buscar: ");
+        int target = scanner.nextInt();
+
+        int resultado = busquedaBinaria(arr, target);
+        if (resultado != -1) {
+            System.out.println("Elemento encontrado en la posición: " + resultado);
+        } else {
+            System.out.println("Elemento no encontrado.");
+        }
 
         scanner.close();
     }
-
 }
