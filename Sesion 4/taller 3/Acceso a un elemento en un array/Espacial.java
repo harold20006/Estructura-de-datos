@@ -1,8 +1,8 @@
-import java.util.Scanner;
+import java.util.Random;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
-public class Ejer01{
+public class Espacial {
 
     public static void encabezadopgm() {
         // Datos del encabezado
@@ -26,27 +26,24 @@ public class Ejer01{
         System.out.println();
     }
 
-    public static int obtenerPrimerElemento(int[] arr) {
+    public static Double obtenerPrimerElemento(Double[] arr) {
         return arr[0];
+    }
+
+    public double obtenerTemperatura() {
+        Random rand = new Random();
+        double temperatura = rand.nextDouble(100);
+        return temperatura;
     }
 
     public static void main(String[] args) {
         encabezadopgm();
-        Scanner scanner = new Scanner(System.in);
+        Double[] arr = new Double[24];
+        Agropecuario temperatura = new Agropecuario();
 
-        System.out.print("Ingrese el tamaño de la lista de pacientes: ");
-        int n = scanner.nextInt();
-        int[] arr = new int[n];
-
-        System.out.println("Ingrese el nombre los pacientes:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextInt();
+        for (int i = 0; i < 24; i++) { // se obtiene la temperatura las 24 horas del día
+            arr[i] = temperatura.obtenerHumedad();
         }
-
-        System.out.println("El primer elemento del array es: " + obtenerPrimerElemento(arr));
-
-        scanner.close();
+        System.out.println("El primer registro de temperatura del día es " + obtenerPrimerElemento(arr));
     }
-
-
 }
