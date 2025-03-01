@@ -1,8 +1,8 @@
-import java.util.Scanner;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Scanner;
 
-public class Salud {
+public class Salud5 {
 
     public static void encabezadopgm() {
         // Datos del encabezado
@@ -26,25 +26,22 @@ public class Salud {
         System.out.println();
     }
 
-    public static String obtenerPrimerElemento(String[] arr) {
-        return arr[0];
+    public static boolean esPar(int num) {
+        return num % 2 == 0;
     }
 
     public static void main(String[] args) {
         encabezadopgm();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el tamaño de la lista de pacientes: ");
-        int n = scanner.nextInt();
-        scanner.nextLine();
-        String[] arr = new String[n];
+        System.out.print("Ingrese el numero IP: ");
+        int num = scanner.nextInt();
 
-        System.out.println("Ingrese los nombres de los pacientes:");
-        for (int i = 0; i < n; i++) {
-            arr[i] = scanner.nextLine();
+        if (esPar(num)) {
+            System.out.println("El número IP: " + num + " es par.");
+        } else {
+            System.out.println("El número IP: " + num + " es impar.");
         }
-
-        System.out.println("El primer paciente es: " + obtenerPrimerElemento(arr));
 
         scanner.close();
     }
