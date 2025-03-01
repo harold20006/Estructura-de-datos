@@ -1,9 +1,9 @@
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
+import java.util.ArrayList;
 
-public class Salud5 {
-
+public class Agropecuario5 {
     public static void encabezadopgm() {
         // Datos del encabezado
         String nombre = "Harold Roldan Vargas";
@@ -26,24 +26,28 @@ public class Salud5 {
         System.out.println();
     }
 
-    public static boolean esPar(int num) {
-        return num % 2 == 0;
-    }
-
     public static void main(String[] args) {
         encabezadopgm();
+
+        int n = 0;
+        System.out.println("Ingrese la cantidad de lotes de pollo : ");
         Scanner scanner = new Scanner(System.in);
+        n = scanner.nextInt();
+        ArrayList<Integer> pollosp = new ArrayList<>();
+        ArrayList<Integer> pollosi = new ArrayList<>();
 
-        System.out.print("Ingrese el codigo del medicamento: ");
-        int num = scanner.nextInt();
-
-        if (esPar(num)) {
-            System.out.println("El codigo del medicamneto: " + num + " es par y se encuentra en el pasillo 5.");
-        } else {
-            System.out.println("El codigo del medicamento: " + num + " es impar y se encuentra en el pasillo 12.");
+        for (int i = 0; i < n; i++) {
+            System.out.println("Ingrese el la cantidad de pollos del lote " + (i + 1) + " :");
+            int a = scanner.nextInt();
+            if (a % 2 == 0) {
+                pollosp.add(a);
+            } else {
+                pollosi.add(a);
+            }
         }
 
         scanner.close();
+        System.out.println("Los lotes de pollos pares son: " + pollosp);
+        System.out.println("Los lotes de pollos impares son: " + pollosi);
     }
-
 }

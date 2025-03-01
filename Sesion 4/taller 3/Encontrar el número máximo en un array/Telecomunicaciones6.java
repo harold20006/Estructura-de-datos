@@ -2,7 +2,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Salud5 {
+public class Telecomunicaciones6 {
 
     public static void encabezadopgm() {
         // Datos del encabezado
@@ -26,22 +26,31 @@ public class Salud5 {
         System.out.println();
     }
 
-    public static boolean esPar(int num) {
-        return num % 2 == 0;
+    public static int maximo(int[] numeros) {
+        int max = numeros[0];
+        for (int i = 1; i < numeros.length; i++) {
+            if (numeros[i] > max) {
+                max = numeros[i];
+            }
+        }
+        return max;
     }
 
     public static void main(String[] args) {
         encabezadopgm();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el codigo del medicamento: ");
-        int num = scanner.nextInt();
+        System.out.print("Ingrese la cantidad de velocidades registrada: ");
+        int cantidad = scanner.nextInt();
+        int[] numeros = new int[cantidad];
 
-        if (esPar(num)) {
-            System.out.println("El codigo del medicamneto: " + num + " es par y se encuentra en el pasillo 5.");
-        } else {
-            System.out.println("El codigo del medicamento: " + num + " es impar y se encuentra en el pasillo 12.");
+        for (int i = 0; i < cantidad; i++) {
+            System.out.print("Ingrese cada velocidad registrada: " + (i + 1) + ": ");
+            numeros[i] = scanner.nextInt();
         }
+
+        int max = maximo(numeros);
+        System.out.println("la velocidad maxima registrada es: " + max);
 
         scanner.close();
     }

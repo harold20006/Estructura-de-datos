@@ -2,9 +2,9 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
-public class Salud5 {
+public class Espacial5 {
 
-    public static void encabezadopgm() {
+     public static void encabezadopgm() {
         // Datos del encabezado
         String nombre = "Harold Roldan Vargas";
         String campus = "Campus Cali, U. Cooperativa de Colombia";
@@ -34,16 +34,16 @@ public class Salud5 {
         encabezadopgm();
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Ingrese el codigo del medicamento: ");
+        System.out.print("Ingrese el numero de la pieza: ");
         int num = scanner.nextInt();
 
         if (esPar(num)) {
-            System.out.println("El codigo del medicamneto: " + num + " es par y se encuentra en el pasillo 5.");
+            System.out.println("El número de la pieza: " + num + " es par.");
         } else {
-            System.out.println("El codigo del medicamento: " + num + " es impar y se encuentra en el pasillo 12.");
+            System.out.println("El número de la pieza: " + num + " es impar.");
         }
 
         scanner.close();
     }
-
+    
 }
