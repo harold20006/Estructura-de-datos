@@ -2,8 +2,8 @@
 #include <queue>
 #include <mutex>
 #include <thread>
-#include "Encabezado.c++"
-
+#include <chrono>
+#include "encabezado01.c++"
 using namespace std;
  
 queue<string> alertas;

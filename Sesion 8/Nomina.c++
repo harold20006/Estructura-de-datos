@@ -1,7 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
-#include "Encabezado.c++"
+#include "encabezado01.c++"
 using namespace std;
  
 struct Pago {
