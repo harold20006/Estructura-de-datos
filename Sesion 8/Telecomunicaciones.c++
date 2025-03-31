@@ -2,6 +2,7 @@
 #include <queue>
 #include <mutex>
 #include <thread>
+#include "Encabezado.c++"
 using namespace std;
  
 queue<string> mensajes;
@@ -27,6 +28,7 @@ void recibirMensajes() {
 }
  
 int main() {
+    imprimirencabezado();
     thread productor(enviarMensajes);
     thread consumidor(recibirMensajes);
     productor.join();

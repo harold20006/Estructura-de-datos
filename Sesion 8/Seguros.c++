@@ -1,6 +1,7 @@
 #include <iostream>
 #include <queue>
 #include <string>
+#include "Encabezado.c++"
 using namespace std;
  
 struct Siniestro {
@@ -12,6 +13,7 @@ struct Siniestro {
 };
  
 int main() {
+    imprimirencabezado();
     priority_queue<Siniestro> cola;
     cola.push({"Robo leve", 1});
     cola.push({"Incendio", 3});

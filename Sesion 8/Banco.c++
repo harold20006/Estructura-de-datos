@@ -3,6 +3,7 @@
 #include <thread>
 #include <mutex>
 #include <chrono>
+include "Encabezado.c++"
 using namespace std;
  
 queue<string> transacciones;
@@ -30,6 +31,7 @@ void consumidor() {
 }
  
 int main() {
+    imprimirencabezado();
     thread t1(productor);
     thread t2(consumer);
     t1.join();

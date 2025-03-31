@@ -2,6 +2,8 @@
 #include <queue>
 #include <mutex>
 #include <thread>
+#include "Encabezado.c++"
+
 using namespace std;
  
 queue<string> alertas;
@@ -28,6 +30,7 @@ void atenderAlertas() {
 }
  
 int main() {
+    imprimirencabezado();
     thread sensores(generarAlertas);
     thread tecnicos(atenderAlertas);
     sensores.join();
