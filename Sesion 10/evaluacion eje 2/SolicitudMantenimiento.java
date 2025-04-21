@@ -1,11 +1,11 @@
 public class SolicitudMantenimiento {
     private String id;
-    private String equipo;
+    private String zona;
     private String prioridad;
 
-    public SolicitudMantenimiento(String id, String equipo, String prioridad) {
+    public SolicitudMantenimiento(String id, String zona, String prioridad) {
         this.id = id;
-        this.equipo = equipo;
+        this.zona = zona;
         this.prioridad = prioridad;
     }
 
@@ -14,10 +14,11 @@ public class SolicitudMantenimiento {
     }
 
     public String getEquipo() {
-        return equipo;
+        return zona;
     }
 
     public String getPrioridad() {
         return prioridad;
     }
+
 }
