@@ -1,0 +1,13 @@
+Origen,Destino,Peso
+Centro,ZonaNorte,5
+Centro,ZonaSur,2
+ZonaNorte,ZonaEste,3
+ZonaSur,ZonaEste,4
+ZonaNorte,ZonaSur,1
+ZonaEste,ZonaSur,2
+ZonaEste,ZonaNorte,1
+ZonaSur,ZonaNorte,2
+ZonaEste,ZonaNorte,3
+ZonaSur,ZonaEste,4
+
+
