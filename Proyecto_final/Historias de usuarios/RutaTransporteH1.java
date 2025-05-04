@@ -1,6 +1,6 @@
 import java.util.*;
 
-public class RutaTransporte {
+public class RutaTransporteH1 {
 
     static class Conexion {
         int destino;
